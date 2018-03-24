@@ -20,7 +20,6 @@ class Gishatich extends Mayrakan {
 
             this.x = x;
             this.y = y;
-              console.log("sharjvec");
         }
        
     }
@@ -34,7 +33,6 @@ class Gishatich extends Mayrakan {
         var cord = random(emptyCord);
 
         if (cord) {
-            console.log("kerav");
             this.multiply++;
             this.energy++;
             var x = cord[0];
@@ -83,7 +81,6 @@ class Gishatich extends Mayrakan {
             matrix[y][x] = 3;
             this.multiply = 0;
         }
-         console.log("bazm");
     }
     die() {
         matrix[this.y][this.x] = 0;

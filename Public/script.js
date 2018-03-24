@@ -129,8 +129,6 @@ function draw() {
         }
     }
 
-
-
     for (var i in xotArr) {
         xotArr[i].mul();
     }
@@ -149,6 +147,7 @@ function draw() {
         }
 
    }   
+    text(frameCount, width / 2, height / 2);
     
 }
 
