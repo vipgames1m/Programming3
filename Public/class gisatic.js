@@ -2,8 +2,11 @@
 
 
 class Gishatich extends Mayrakan {
-   
-
+    constructor(x, y, ind) {
+        super(x,y,ind)
+        this.energy = 10;
+    }
+    
     move() {
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);

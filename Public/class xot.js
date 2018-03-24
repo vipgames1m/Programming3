@@ -1,6 +1,6 @@
 //խոտի կլասը
-class Grass extends Mayrakan{
-    
+class Grass extends Mayrakan {
+   
 
     mul() {
         this.multiply++;
