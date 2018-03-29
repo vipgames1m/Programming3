@@ -12,6 +12,7 @@ var grasscount = 80;
 var eatcount = 50;
 var gishcount = 30;
 var gishkercount = 20;
+var jur = 80;
 
 
 
@@ -25,7 +26,7 @@ function setup() {
     }
 
 
-    var c = 0;
+    c = 0;
     while (c < grasscount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -35,7 +36,7 @@ function setup() {
         }
     }
 
-    var c = 0;
+    c = 0;
     while (c < eatcount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -45,7 +46,7 @@ function setup() {
         }
     }
 
-    var c = 0;
+    c = 0;
     while (c < gishcount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -56,7 +57,7 @@ function setup() {
     }
 
 
-    var c = 0;
+    c = 0;
     while (c < gishkercount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -66,8 +67,15 @@ function setup() {
         }
     }
 
-
-
+    c = 0;
+    while (c < jur) {
+        var x = Math.floor(random(0, erk));
+        var y = Math.floor(random(0, bar));
+        if (matrix[x][y] == 0) {
+            matrix[x][y] = 5;
+            c++
+        }
+    }
 
 
     noStroke()
@@ -96,6 +104,11 @@ function setup() {
                 gishatichArr.push(gishatich);
 
             }
+            else if (matrix[i][j] == 5) {
+                var Jur = new Jur(j, i, 5);
+                JurArr.push(Jur);
+
+            }
         }
     }
 
@@ -105,6 +118,9 @@ function setup() {
 function draw() {
     background('#acacac');
 
+    for (var i in JurArr) {
+        JurArr[i].mul();
+    }
     for (var i in xotArr) {
         xotArr[i].mul();
     }
@@ -129,10 +145,10 @@ function draw() {
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
-                        fill("red");
+                        fill("white");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 2) {
-                        fill("blue");
+                        fill("#e2d25c");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 0) {
                         fill('#acacac');
@@ -146,6 +162,10 @@ function draw() {
                         fill('#cc3300  ');
                         ellipse(j * side, i * side, side, side);
                     }
+                    else if (matrix[i][j] == 5) {
+                        fill("black");
+                        ellipse(j * side, i * side, side, side);
+                    }
 
                 }
             }
@@ -156,10 +176,10 @@ function draw() {
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
-                        fill("green");
+                        fill("#66bb51");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 2) {
-                        fill("orange");
+                        fill("#ec9526");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 0) {
                         fill('#acacac');
@@ -208,10 +228,10 @@ function draw() {
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
-                        fill("green");
+                        fill("#a2c82c");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 2) {
-                        fill("orange");
+                        fill("#cd6616");
                         rect(j * side, i * side, side, side);
                     } else if (matrix[i][j] == 0) {
                         fill('#acacac');
