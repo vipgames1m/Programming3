@@ -4,6 +4,7 @@ var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
 var gishatichkerArr = [];
+var JurArr = [];
 
 
 var erk = 50;
@@ -12,7 +13,7 @@ var grasscount = 80;
 var eatcount = 50;
 var gishcount = 30;
 var gishkercount = 20;
-var jur = 80;
+var jurcount= 50;
 
 
 
@@ -68,7 +69,7 @@ function setup() {
     }
 
     c = 0;
-    while (c < jur) {
+    while (c < jurcount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
         if (matrix[x][y] == 0) {
@@ -105,8 +106,8 @@ function setup() {
 
             }
             else if (matrix[i][j] == 5) {
-                var Jur = new Jur(j, i, 5);
-                JurArr.push(Jur);
+                var jur = new Jur(j, i, 5);
+                JurArr.push(jur);
 
             }
         }
@@ -123,6 +124,7 @@ function draw() {
     }
     for (var i in xotArr) {
         xotArr[i].mul();
+        xotArr[i].eat();
     }
 
     for (var i in eatArr) {
@@ -163,8 +165,8 @@ function draw() {
                         ellipse(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
-                        fill("black");
-                        ellipse(j * side, i * side, side, side);
+                        fill("blue");
+                        rect(j * side, i * side, side, side);
                     }
 
                 }
@@ -193,7 +195,10 @@ function draw() {
                         fill('#cc3300  ');
                         ellipse(j * side, i * side, side, side);
                     }
-
+                    else if (matrix[i][j] == 5) {
+                        fill("blue");
+                        rect(j * side, i * side, side, side);
+                    }
                 }
             }
         }
@@ -219,7 +224,10 @@ function draw() {
                         fill('#cc3300  ');
                         ellipse(j * side, i * side, side, side);
                     }
-
+                    else if (matrix[i][j] == 5) {
+                        fill("blue");
+                        rect(j * side, i * side, side, side);
+                    }
                 }
             }
         }
@@ -244,6 +252,10 @@ function draw() {
                     else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
                         fill('#cc3300  ');
                         ellipse(j * side, i * side, side, side);
+                    }
+                    else if (matrix[i][j] == 5) {
+                        fill("blue");
+                        rect(j * side, i * side, side, side);
                     }
 
                 }

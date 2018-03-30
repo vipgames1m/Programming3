@@ -1,7 +1,6 @@
 //խոտի կլասը
 class Jur extends Mayrakan {
    
-
     mul() {
         this.multiply++;
         if (this.multiply == 2) {
@@ -12,8 +11,8 @@ class Jur extends Mayrakan {
                 var x = cord[0];
                 var y = cord[1];
 
-                var norXot = new Grass(x, y, this.index);
-                xotArr.push(norXot);
+                var norJur = new Jur(x, y, this.index);
+                JurArr.push(norJur);
 
                 matrix[y][x] = 5;
                 this.multiply = 0;
