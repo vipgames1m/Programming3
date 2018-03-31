@@ -3,22 +3,21 @@ var side = 20;
 var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
-var gishatichkerArr = [];
+var gishatichakerArr = [];
 var JurArr = [];
 
 
 var erk = 50;
 var bar = 50;
-var grasscount = 80;
+var grasscount = 50;
 var eatcount = 50;
 var gishcount = 30;
-var gishkercount = 20;
-var jurcount= 50;
-
-
+var gishatichakercount = 20;
+var jurcount = 50;
 
 
 function setup() {
+    
     for (var i = 0; i < erk; ++i) {
         matrix.push([]);
         for (var j = 0; j < bar; ++j) {
@@ -59,7 +58,7 @@ function setup() {
 
 
     c = 0;
-    while (c < gishkercount) {
+    while (c < gishatichakercount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
         if (matrix[x][y] == 0) {
@@ -101,8 +100,8 @@ function setup() {
 
             }
             else if (matrix[i][j] == 4) {
-                var gishatich = new Gishatichaker(j, i, 4);
-                gishatichArr.push(gishatich);
+                var gishatichaker = new Gishatichaker(j, i, 4);
+                gishatichakerArr.push(gishatichaker);
 
             }
             else if (matrix[i][j] == 5) {
@@ -118,9 +117,13 @@ function setup() {
 
 function draw() {
     background('#acacac');
+    if (frameCount % 40 >= 0 && frameCount % 40 < 10) {
 
-    for (var i in JurArr) {
-        JurArr[i].mul();
+    }
+    else {
+        for (var i in JurArr) {
+            JurArr[i].mul();
+        }
     }
     for (var i in xotArr) {
         xotArr[i].mul();
@@ -135,15 +138,18 @@ function draw() {
         gishatichArr[i].eat();
     }
 
-    if (gishatichArr.length > 30) {
-        for (var i in gishatichkerArr) {
-            gishatichkerArr[i].eat();
+    if (frameCount % 1000 >= 100) {
+        console.log("mtav");
+        for (var i in gishatichakerArr) {
+            gishatichakerArr[i].eat();
         }
 
     }
     function exanak() {
-        if (frameCount %40>=0 && frameCount %40<10) {
-            console.log(1);
+        var exanaktext = document.getElementById("exanaktext");
+        if (frameCount % 40 >= 0 && frameCount % 40 < 10) {
+            exanaktext.innerText = "Dzmer";
+            exanaktext.style.color = "blue";
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
@@ -160,12 +166,12 @@ function draw() {
                         fill('black');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 150) {
                         fill('#cc3300  ');
-                        ellipse(j * side, i * side, side, side);
+                        rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
-                        fill("blue");
+                        fill("#13A4DE");
                         rect(j * side, i * side, side, side);
                     }
 
@@ -173,8 +179,9 @@ function draw() {
             }
 
         }
-        else if (frameCount %40>=10 && frameCount %40<20) {
-            console.log(2);
+        else if (frameCount % 40 >= 10 && frameCount % 40 < 20) {
+            exanaktext.innerText = "Garun";
+            exanaktext.style.color = "#66bb51";
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
@@ -191,9 +198,9 @@ function draw() {
                         fill('#0F0E0E  ');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
                         fill('#cc3300  ');
-                        ellipse(j * side, i * side, side, side);
+                        rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
                         fill("blue");
@@ -202,8 +209,9 @@ function draw() {
                 }
             }
         }
-        else if (frameCount %40>=20 && frameCount %40<30) {
-            console.log(3);
+        else if (frameCount % 40 >= 20 && frameCount % 40 < 30) {
+            exanaktext.innerText = "Amar";
+            exanaktext.style.color = "green";
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
@@ -220,9 +228,9 @@ function draw() {
                         fill('#0F0E0E  ');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
                         fill('#cc3300  ');
-                        ellipse(j * side, i * side, side, side);
+                        rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
                         fill("blue");
@@ -231,8 +239,9 @@ function draw() {
                 }
             }
         }
-        else if (frameCount %40>=30 && frameCount %40<=39) {
-            console.log(4);
+        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+            exanaktext.innerText = "Asun";
+            exanaktext.style.color = "#a2c82c";
             for (var i = 0; i < matrix.length; i++) {
                 for (var j = 0; j < matrix[i].length; j++) {
                     if (matrix[i][j] == 1) {
@@ -249,9 +258,9 @@ function draw() {
                         fill('#0F0E0E  ');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
                         fill('#cc3300  ');
-                        ellipse(j * side, i * side, side, side);
+                        rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
                         fill("blue");

@@ -1,19 +1,17 @@
 //խոտի կլասը
 class Grass extends Mayrakan {
-   
     eat() {
         var emptyCord = this.getDirections(5);
 
         var cord = random(emptyCord);
 
         if (cord) {
-            console.log("kerav")
             this.multiply++;
 
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 5;
+            matrix[y][x] = 1;
             matrix[this.y][this.x] = 0;
 
             this.x = x;

@@ -3,7 +3,7 @@
 class Gishatichaker extends Mayrakan{
     constructor(x, y, ind) {
         super(x,y,ind)
-        this.energy = 30;
+        this.energy = 40;
         
     }
     
@@ -27,7 +27,7 @@ class Gishatichaker extends Mayrakan{
 
      eat() {
 
-        var emptyCord = this.getDirections(3);
+        var emptyCord = this.getDirections(1 || 2 || 3 || 5);
 
         var cord = random(emptyCord);
 
@@ -37,7 +37,7 @@ class Gishatichaker extends Mayrakan{
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 3;
+            matrix[y][x] = 4;
             matrix[this.y][this.x] = 0;
 
             this.x = x;
@@ -73,18 +73,18 @@ class Gishatichaker extends Mayrakan{
 
             this.multiply++;
 
-            var norGishatich = new Gishatich(x, y, this.index);
-            gishatichArr.push(norGishatich);
+            var norgishatichaker = new Gishatichaker(x, y, this.index);
+            gishatichakerArr.push(norgishatichaker);
 
-            matrix[y][x] = 3;
+            matrix[y][x] = 4;
             this.multiply = 0;
         }
     }
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in gishatichkerArr) {
-            if (this.x ==gishatichkerArr[i].x && this.y == gishatichkerArr[i].y) {
-               gishatichkerArr.splice(i, 1);                       
+        for (var i in gishatichakerArr) {
+            if (this.x ==gishatichakerArr[i].x && this.y == gishatichakerArr[i].y) {
+               gishatichakerArr.splice(i, 1);                       
             }
         }
     }
