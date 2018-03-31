@@ -3,7 +3,7 @@
 class Gishatichaker extends Mayrakan{
     constructor(x, y, ind) {
         super(x,y,ind)
-        this.energy = 40;
+        this.energy = 50;
         
     }
     

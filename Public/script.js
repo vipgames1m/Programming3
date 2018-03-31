@@ -117,7 +117,7 @@ function setup() {
 
 function draw() {
     background('#acacac');
-    if (frameCount % 40 >= 0 && frameCount % 40 < 10) {
+    if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
 
     }
     else {
@@ -138,8 +138,7 @@ function draw() {
         gishatichArr[i].eat();
     }
 
-    if (frameCount % 1000 >= 100) {
-        console.log("mtav");
+    if (frameCount % 1000 >= 125) {
         for (var i in gishatichakerArr) {
             gishatichakerArr[i].eat();
         }
@@ -148,38 +147,6 @@ function draw() {
     function exanak() {
         var exanaktext = document.getElementById("exanaktext");
         if (frameCount % 40 >= 0 && frameCount % 40 < 10) {
-            exanaktext.innerText = "Dzmer";
-            exanaktext.style.color = "blue";
-            for (var i = 0; i < matrix.length; i++) {
-                for (var j = 0; j < matrix[i].length; j++) {
-                    if (matrix[i][j] == 1) {
-                        fill("white");
-                        rect(j * side, i * side, side, side);
-                    } else if (matrix[i][j] == 2) {
-                        fill("#e2d25c");
-                        rect(j * side, i * side, side, side);
-                    } else if (matrix[i][j] == 0) {
-                        fill('#acacac');
-                        rect(j * side, i * side, side, side);
-                    }
-                    else if (matrix[i][j] == 3) {
-                        fill('black');
-                        rect(j * side, i * side, side, side);
-                    }
-                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
-                        fill('#cc3300  ');
-                        rect(j * side, i * side, side, side);
-                    }
-                    else if (matrix[i][j] == 5) {
-                        fill("#13A4DE");
-                        rect(j * side, i * side, side, side);
-                    }
-
-                }
-            }
-
-        }
-        else if (frameCount % 40 >= 10 && frameCount % 40 < 20) {
             exanaktext.innerText = "Garun";
             exanaktext.style.color = "#66bb51";
             for (var i = 0; i < matrix.length; i++) {
@@ -195,21 +162,23 @@ function draw() {
                         rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 3) {
-                        fill('#0F0E0E  ');
+                        fill('#BA10B1');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
-                        fill('#cc3300  ');
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 125) {
+                        fill('#cc3300   ');
                         rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
                         fill("blue");
                         rect(j * side, i * side, side, side);
                     }
+
                 }
             }
+
         }
-        else if (frameCount % 40 >= 20 && frameCount % 40 < 30) {
+        else if (frameCount % 40 >= 10 && frameCount % 40 < 20) {
             exanaktext.innerText = "Amar";
             exanaktext.style.color = "green";
             for (var i = 0; i < matrix.length; i++) {
@@ -225,10 +194,10 @@ function draw() {
                         rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 3) {
-                        fill('#0F0E0E  ');
+                        fill('#BA10B1');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 125) {
                         fill('#cc3300  ');
                         rect(j * side, i * side, side, side);
                     }
@@ -239,7 +208,7 @@ function draw() {
                 }
             }
         }
-        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+        else if (frameCount % 40 >= 20 && frameCount % 40 < 30) {
             exanaktext.innerText = "Asun";
             exanaktext.style.color = "#a2c82c";
             for (var i = 0; i < matrix.length; i++) {
@@ -255,15 +224,45 @@ function draw() {
                         rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 3) {
-                        fill('#0F0E0E  ');
+                        fill('#BA10B1');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 125) {
                         fill('#cc3300  ');
                         rect(j * side, i * side, side, side);
                     }
                     else if (matrix[i][j] == 5) {
                         fill("blue");
+                        rect(j * side, i * side, side, side);
+                    }
+                }
+            }
+        }
+        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+            exanaktext.innerText = "Dzmer";
+            exanaktext.style.color = "blue";
+            for (var i = 0; i < matrix.length; i++) {
+                for (var j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] == 1) {
+                        fill("white");
+                        rect(j * side, i * side, side, side);
+                    } else if (matrix[i][j] == 2) {
+                        fill("#e2d25c");
+                        rect(j * side, i * side, side, side);
+                    } else if (matrix[i][j] == 0) {
+                        fill('#acacac');
+                        rect(j * side, i * side, side, side);
+                    }
+                    else if (matrix[i][j] == 3) {
+                        fill('#BA10B1');
+                        rect(j * side, i * side, side, side);
+                    }
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 125) {
+                        fill('#cc3300  ');
+                        rect(j * side, i * side, side, side);
+                    }
+                    else if (matrix[i][j] == 5) {
+                        fill("#15BFDE");
                         rect(j * side, i * side, side, side);
                     }
 
