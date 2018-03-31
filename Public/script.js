@@ -13,7 +13,7 @@ var grasscount = 50;
 var eatcount = 50;
 var gishcount = 30;
 var gishatichakercount = 20;
-var jurcount = 50;
+var jurcount = 80;
 
 
 function setup() {
@@ -166,7 +166,7 @@ function draw() {
                         fill('black');
                         rect(j * side, i * side, side, side);
                     }
-                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 150) {
+                    else if (matrix[i][j] == 4 && frameCount % 1000 >= 100) {
                         fill('#cc3300  ');
                         rect(j * side, i * side, side, side);
                     }
